@@ -24,6 +24,11 @@ class Movie(models.Model):
         validators=(MinValueValidator(1),),
     )
     poster_url = models.URLField(max_length=500, blank=True)
+    poster_attribution = models.CharField(max_length=500, blank=True)
+    poster_license = models.CharField(max_length=100, blank=True)
+    poster_source_url = models.URLField(max_length=500, blank=True)
+    wikidata_id = models.CharField(max_length=16, unique=True, null=True, blank=True)
+    data_source_url = models.URLField(max_length=500, blank=True)
     genres = models.ManyToManyField(Genre, related_name='movies', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

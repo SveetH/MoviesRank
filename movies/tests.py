@@ -115,6 +115,25 @@ class MovieApiTests(APITestCase):
         self.assertEqual(detail.data['average_rating'], '5.00')
         self.assertEqual(detail.data['rating_count'], 1)
 
+    def test_movie_interaction_returns_current_users_like_and_rating(self):
+        interaction_url = f'/api/movies/{self.movie.pk}/interaction/'
+        self.assertEqual(
+            self.client.get(interaction_url).status_code,
+            status.HTTP_401_UNAUTHORIZED,
+        )
+
+        self.client.force_authenticate(self.user)
+        self.assertEqual(
+            self.client.get(interaction_url).data,
+            {'liked': False, 'rating': None},
+        )
+        Like.objects.create(user=self.user, movie=self.movie)
+        Rating.objects.create(user=self.user, movie=self.movie, value=4)
+        self.assertEqual(
+            self.client.get(interaction_url).data,
+            {'liked': True, 'rating': 4},
+        )
+
     def test_comments_are_public_to_read_and_only_author_or_manager_can_delete(self):
         comments_url = f'/api/movies/{self.movie.pk}/comments/'
         self.assertEqual(self.client.get(comments_url).status_code, status.HTTP_200_OK)
