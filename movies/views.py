@@ -69,6 +69,18 @@ class LikedMoviesView(generics.ListAPIView):
         return movie_queryset().filter(likes__user=self.request.user)
 
 
+class MovieInteractionView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request, movie_id):
+        movie = get_object_or_404(Movie, pk=movie_id)
+        rating = Rating.objects.filter(user=request.user, movie=movie).first()
+        return Response({
+            'liked': Like.objects.filter(user=request.user, movie=movie).exists(),
+            'rating': rating.value if rating else None,
+        })
+
+
 class MovieLikeView(APIView):
     permission_classes = (IsAuthenticated,)
 

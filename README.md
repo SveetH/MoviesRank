@@ -20,6 +20,23 @@ The API is available at `http://127.0.0.1:8000/api/`; the Django admin is at `/a
 The development secret key is only a local fallback. Set `DJANGO_SECRET_KEY`, `DJANGO_DEBUG`,
 and `DJANGO_ALLOWED_HOSTS` in deployment environments.
 
+## React frontend
+
+The React/TypeScript frontend lives in `frontend/` and uses Vite for development and production
+builds. Node.js 20.19 or newer is required. In a separate terminal, while the Django API is
+running, start the frontend with:
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+Visit `http://127.0.0.1:5173/`. Vite proxies `/api` requests to `http://127.0.0.1:8000`;
+override the target with `API_PROXY_TARGET` if Django is listening elsewhere. Create a
+production bundle with `npm run build` in `frontend/`; serve the built `frontend/dist/` directory
+behind a web server that forwards `/api/` to Django.
+
 Django 4.2 is pinned to support the Python 3.9 runtime available in this environment.
 That Django release is no longer supported for security fixes; before production deployment,
 upgrade to a maintained Python version and a currently supported Django release.
@@ -27,6 +44,21 @@ upgrade to a maintained Python version and a currently supported Django release.
 To permit a non-staff account to manage movie records, create a Django auth group named
 `Movie Managers` in the admin and add the account to that group. Staff and superuser
 accounts can also manage movies. Genres are managed through the Django admin.
+
+## Sample movie catalog
+
+Import the curated 30-movie sample catalog and its poster credits into the local database:
+
+```powershell
+python manage.py migrate
+python manage.py import_wikimedia_movies
+```
+
+The import is safe to rerun: it updates the same movies by Wikidata ID and creates any
+missing genres. Movie facts are sourced from Wikidata; posters are hosted on Wikimedia
+Commons. Each movie keeps links to its source records and the Commons poster page, along
+with the available creator attribution and license label. The frontend displays these
+credits on movie cards and detail pages. This curated catalog is not IMDb's Top 30.
 
 ## Authentication
 
@@ -53,6 +85,7 @@ user actions require authentication.
 | POST/DELETE | `/api/movies/{id}/like/` | Authenticated | Like or unlike a movie |
 | POST/PUT | `/api/movies/{id}/rating/` | Authenticated | Set or update your 1–5 star rating |
 | DELETE | `/api/movies/{id}/rating/` | Authenticated | Remove your rating |
+| GET | `/api/movies/{id}/interaction/` | Authenticated | Read your like and rating for a movie |
 | GET/POST | `/api/movies/{id}/comments/` | Public read; authenticated write | List or add comments |
 | DELETE | `/api/comments/{id}/` | Author or Movie Manager | Delete a comment |
 | GET | `/api/movies/liked/` | Authenticated | List movies you have liked |
@@ -74,7 +107,8 @@ Movie listing supports:
 ## Data model
 
 - `Account` extends Django's `AbstractUser` and requires a unique email address.
-- `Movie` stores name, description, optional release date, runtime, poster URL, and genres.
+- `Movie` stores name, description, optional release date, runtime, poster URL and credits,
+  source links, and genres.
 - `Like`, `Rating`, and `Comment` are separate user/movie relationship models.
 - `Genre` is reusable and related to movies many-to-many.
 - Movie management is assigned using Django Groups instead of a separate role table.

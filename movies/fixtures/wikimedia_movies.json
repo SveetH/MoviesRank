@@ -1,0 +1,507 @@
+[
+  {
+    "name": "Spartacus",
+    "description": "1960 film directed by Stanley Kubrick",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Spartacus_-_1960_-_poster.png/500px-Spartacus_-_1960_-_poster.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 198,
+    "release_date": "1960-10-08",
+    "poster_attribution": "Reynold Brown",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Spartacus_-_1960_-_poster.png",
+    "wikidata_id": "Q108297",
+    "data_source_url": "https://www.wikidata.org/wiki/Q108297",
+    "genres": [
+      "action",
+      "biographical",
+      "drama"
+    ]
+  },
+  {
+    "name": "Psycho",
+    "description": "1960 US film by Alfred Hitchcock",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Psycho_%281960%29_theatrical_poster_%28retouched%29.jpg/500px-Psycho_%281960%29_theatrical_poster_%28retouched%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 109,
+    "release_date": "1960-01-01",
+    "poster_attribution": "Designed by Macario Gómez Quibus. \"© Shamley Productions, Inc.\"",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Psycho_(1960)_theatrical_poster_(retouched).jpg",
+    "wikidata_id": "Q163038",
+    "data_source_url": "https://www.wikidata.org/wiki/Q163038",
+    "genres": [
+      "crime drama",
+      "crime",
+      "crime thriller"
+    ]
+  },
+  {
+    "name": "Bonnie and Clyde",
+    "description": "1967 US film by Arthur Penn",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Bonnie_and_Clyde_%281967_teaser_poster%29.jpg/500px-Bonnie_and_Clyde_%281967_teaser_poster%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 107,
+    "release_date": "1967-08-04",
+    "poster_attribution": "Distributed by Warner Bros.-Seven Arts.",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Bonnie_and_Clyde_(1967_teaser_poster).jpg",
+    "wikidata_id": "Q181776",
+    "data_source_url": "https://www.wikidata.org/wiki/Q181776",
+    "genres": [
+      "action",
+      "biographical",
+      "crime"
+    ]
+  },
+  {
+    "name": "Seven Samurai",
+    "description": "1954 Japanese film by Akira Kurosawa",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Seven_Samurai_poster2.jpg/500px-Seven_Samurai_poster2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 207,
+    "release_date": "1954-01-01",
+    "poster_attribution": "Copyright © 1954 by en:Toho Studios.",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Seven_Samurai_poster2.jpg",
+    "wikidata_id": "Q189540",
+    "data_source_url": "https://www.wikidata.org/wiki/Q189540",
+    "genres": [
+      "action",
+      "adventure",
+      "drama"
+    ]
+  },
+  {
+    "name": "Breakfast at Tiffany's",
+    "description": "1961 film directed by Blake Edwards",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Breakfast_at_Tiffany%27s_%281961_poster%29.jpg/500px-Breakfast_at_Tiffany%27s_%281961_poster%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 110,
+    "release_date": "1961-10-06",
+    "poster_attribution": "Designed by Robert McGinnis. \"Copyright © 1961 by Paramount Pictures Corporation and Jurow Shepherd Productions.\"",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Breakfast_at_Tiffany%27s_(1961_poster).jpg",
+    "wikidata_id": "Q193066",
+    "data_source_url": "https://www.wikidata.org/wiki/Q193066",
+    "genres": [
+      "drama",
+      "romantic comedy"
+    ]
+  },
+  {
+    "name": "Sunset Boulevard",
+    "description": "1950 film by Billy Wilder",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Sunset_Boulevard_%281950_poster%29.jpg/500px-Sunset_Boulevard_%281950_poster%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 110,
+    "release_date": "1950-01-01",
+    "poster_attribution": "\"Copyright 1950 Paramount Pictures Corporation\"",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Sunset_Boulevard_(1950_poster).jpg",
+    "wikidata_id": "Q193570",
+    "data_source_url": "https://www.wikidata.org/wiki/Q193570",
+    "genres": [
+      "drama",
+      "film noir",
+      "flashback"
+    ]
+  },
+  {
+    "name": "Rebecca",
+    "description": "1940 film by Alfred Hitchcock",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Rebecca_%281939_poster%29.jpeg/500px-Rebecca_%281939_poster%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 126,
+    "release_date": "1940-01-01",
+    "poster_attribution": "\"© 1939 by United Artists Corporation.\"",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Rebecca_(1939_poster).jpeg",
+    "wikidata_id": "Q204212",
+    "data_source_url": "https://www.wikidata.org/wiki/Q204212",
+    "genres": [
+      "drama",
+      "erotic thriller",
+      "melodrama"
+    ]
+  },
+  {
+    "name": "On the Waterfront",
+    "description": "1954 film by Elia Kazan",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/On_the_Waterfront_%281954_poster%29.jpg/500px-On_the_Waterfront_%281954_poster%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 108,
+    "release_date": "1954-07-28",
+    "poster_attribution": "Illustrator unknown. \"Copyright 1954 – Columbia Pictures Corp.\".",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:On_the_Waterfront_(1954_poster).jpg",
+    "wikidata_id": "Q211372",
+    "data_source_url": "https://www.wikidata.org/wiki/Q211372",
+    "genres": [
+      "crime",
+      "drama",
+      "thriller"
+    ]
+  },
+  {
+    "name": "The Maltese Falcon",
+    "description": "1941 film by John Huston",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/The_Maltese_Falcon_%281941_film_poster%29.jpg/500px-The_Maltese_Falcon_%281941_film_poster%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 101,
+    "release_date": "1941-01-01",
+    "poster_attribution": "Vitagraph Inc., a subsidiary of Warner Bros. at the time of publication.",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:The_Maltese_Falcon_(1941_film_poster).jpg",
+    "wikidata_id": "Q221462",
+    "data_source_url": "https://www.wikidata.org/wiki/Q221462",
+    "genres": [
+      "crime",
+      "drama",
+      "film noir"
+    ]
+  },
+  {
+    "name": "The Apartment",
+    "description": "1960 film directed by Billy Wilder",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/The_Apartment_%281960_poster%29.jpg/500px-The_Apartment_%281960_poster%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 125,
+    "release_date": "1960-06-15",
+    "poster_attribution": "\"Copyright © 1960 – United Artists Corporation\".",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:The_Apartment_(1960_poster).jpg",
+    "wikidata_id": "Q270510",
+    "data_source_url": "https://www.wikidata.org/wiki/Q270510",
+    "genres": [
+      "Christmas",
+      "drama",
+      "romantic comedy"
+    ]
+  },
+  {
+    "name": "The Third Man",
+    "description": "1949 film directed by Carol Reed",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/The_Third_Man_%281949_American_theatrical_poster%29.jpg/500px-The_Third_Man_%281949_American_theatrical_poster%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 104,
+    "release_date": "1949-09-01",
+    "poster_attribution": "\"Copyright 1949 Selznick Releasing Organization, Inc. Country of Origin U.S.A.\"",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:The_Third_Man_(1949_American_theatrical_poster).jpg",
+    "wikidata_id": "Q271830",
+    "data_source_url": "https://www.wikidata.org/wiki/Q271830",
+    "genres": [
+      "adventure",
+      "drama",
+      "film noir"
+    ]
+  },
+  {
+    "name": "Wings",
+    "description": "1927 film by William A. Wellman, Harry d’Abbadie d’Arrast",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Wings_%281927%29_poster.jpg/500px-Wings_%281927%29_poster.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 141,
+    "release_date": "1927-01-01",
+    "poster_attribution": "Paramount Famouse Lasky Corp.",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Wings_(1927)_poster.jpg",
+    "wikidata_id": "Q272036",
+    "data_source_url": "https://www.wikidata.org/wiki/Q272036",
+    "genres": [
+      "action",
+      "drama",
+      "romance"
+    ]
+  },
+  {
+    "name": "All Quiet on the Western Front",
+    "description": "1930 film directed by Lewis Milestone",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/All_Quiet_on_the_Western_Front_%281930_film%29_poster.jpg/500px-All_Quiet_on_the_Western_Front_%281930_film%29_poster.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 136,
+    "release_date": "1930-01-01",
+    "poster_attribution": "Karoly Grosz",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:All_Quiet_on_the_Western_Front_(1930_film)_poster.jpg",
+    "wikidata_id": "Q272599",
+    "data_source_url": "https://www.wikidata.org/wiki/Q272599",
+    "genres": [
+      "anti-war",
+      "drama",
+      "war"
+    ]
+  },
+  {
+    "name": "West Side Story",
+    "description": "1961 film by Robert Wise, Jerome Robbins",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/West_Side_Story_1961_film_poster.jpg/500px-West_Side_Story_1961_film_poster.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 150,
+    "release_date": "1961-01-01",
+    "poster_attribution": "Joe Caroff",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:West_Side_Story_1961_film_poster.jpg",
+    "wikidata_id": "Q273704",
+    "data_source_url": "https://www.wikidata.org/wiki/Q273704",
+    "genres": [
+      "crime",
+      "drama",
+      "musical"
+    ]
+  },
+  {
+    "name": "Dracula",
+    "description": "1931 film directed by Tod Browning",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Dracula_%281931_film_poster_-_Style_F%29.jpg/500px-Dracula_%281931_film_poster_-_Style_F%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 75,
+    "release_date": "1931-02-12",
+    "poster_attribution": "Illustrator unknown; Distributed by Universal Pictures.",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Dracula_(1931_film_poster_-_Style_F).jpg",
+    "wikidata_id": "Q279378",
+    "data_source_url": "https://www.wikidata.org/wiki/Q279378",
+    "genres": [
+      "drama",
+      "horror",
+      "vampire"
+    ]
+  },
+  {
+    "name": "Citizen Kane",
+    "description": "1941 American drama film directed by Orson Welles",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Citizen_Kane_poster%2C_1941_%28Style_B%2C_unrestored%29.jpg/500px-Citizen_Kane_poster%2C_1941_%28Style_B%2C_unrestored%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 119,
+    "release_date": "1941-01-01",
+    "poster_attribution": "William Rose",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Citizen_Kane_poster,_1941_(Style_B,_unrestored).jpg",
+    "wikidata_id": "Q24815",
+    "data_source_url": "https://www.wikidata.org/wiki/Q24815",
+    "genres": [
+      "biographical",
+      "drama",
+      "fiction"
+    ]
+  },
+  {
+    "name": "The Sting",
+    "description": "1973 film by George Roy Hill",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/The_Sting_%281973_alt_poster%29.jpeg/500px-The_Sting_%281973_alt_poster%29.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 129,
+    "release_date": "1973-01-01",
+    "poster_attribution": "Illustrator unknown; presumably a work-for-hire for distributor Universal Pictures.",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:The_Sting_(1973_alt_poster).jpeg",
+    "wikidata_id": "Q62665",
+    "data_source_url": "https://www.wikidata.org/wiki/Q62665",
+    "genres": [
+      "buddy",
+      "comedy",
+      "drama"
+    ]
+  },
+  {
+    "name": "King Kong",
+    "description": "1933 American monster adventure film",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f3/Kingkongposter.jpg/500px-Kingkongposter.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 100,
+    "release_date": "1933-01-01",
+    "poster_attribution": "Unknown authorUnknown author",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Kingkongposter.jpg",
+    "wikidata_id": "Q309048",
+    "data_source_url": "https://www.wikidata.org/wiki/Q309048",
+    "genres": [
+      "adventure",
+      "drama",
+      "fantasy"
+    ]
+  },
+  {
+    "name": "The Jazz Singer",
+    "description": "1927 film by Alan Crosland",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/The_Jazz_Singer_1927_Poster.jpg/500px-The_Jazz_Singer_1927_Poster.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 88,
+    "release_date": "1927-10-06",
+    "poster_attribution": "Unknown authorUnknown author",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:The_Jazz_Singer_1927_Poster.jpg",
+    "wikidata_id": "Q465087",
+    "data_source_url": "https://www.wikidata.org/wiki/Q465087",
+    "genres": [
+      "drama",
+      "melodrama",
+      "musical"
+    ]
+  },
+  {
+    "name": "Limelight",
+    "description": "1952 film by Charlie Chaplin",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Limelight_%281952%29_-_original_theatrical_poster.jpeg/500px-Limelight_%281952%29_-_original_theatrical_poster.jpeg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 137,
+    "release_date": "1952-10-16",
+    "poster_attribution": "Unknown, likely a work-for-hire commissioned by the film studio, United Artists.",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Limelight_(1952)_-_original_theatrical_poster.jpeg",
+    "wikidata_id": "Q584509",
+    "data_source_url": "https://www.wikidata.org/wiki/Q584509",
+    "genres": [
+      "comedy drama",
+      "drama",
+      "melodrama"
+    ]
+  },
+  {
+    "name": "The Best Years of Our Lives",
+    "description": "1946 American drama film directed by William Wyler",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/The_Best_Years_of_Our_Lives_%281946_poster%29.jpg/500px-The_Best_Years_of_Our_Lives_%281946_poster%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 172,
+    "release_date": "1946-01-01",
+    "poster_attribution": "\"Copyright 1946 RKO Radio Pictures Inc.\"",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:The_Best_Years_of_Our_Lives_(1946_poster).jpg",
+    "wikidata_id": "Q645094",
+    "data_source_url": "https://www.wikidata.org/wiki/Q645094",
+    "genres": [
+      "drama",
+      "war"
+    ]
+  },
+  {
+    "name": "A Place in the Sun",
+    "description": "1951 film by George Stevens",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/A_Place_in_the_Sun_%281951_poster%29.jpg/500px-A_Place_in_the_Sun_%281951_poster%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 117,
+    "release_date": "1951-01-01",
+    "poster_attribution": "Designer unknown. \"Copyright 1951 Paramount Pictures Corporation.\"",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:A_Place_in_the_Sun_(1951_poster).jpg",
+    "wikidata_id": "Q733627",
+    "data_source_url": "https://www.wikidata.org/wiki/Q733627",
+    "genres": [
+      "drama",
+      "film noir",
+      "romance"
+    ]
+  },
+  {
+    "name": "Frankenstein",
+    "description": "1931 film directed by James Whale",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Poster_-_Frankenstein_02.jpg/500px-Poster_-_Frankenstein_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 71,
+    "release_date": "1931-11-21",
+    "poster_attribution": "Employee(s) of Universal Pictures",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Poster_-_Frankenstein_02.jpg",
+    "wikidata_id": "Q546829",
+    "data_source_url": "https://www.wikidata.org/wiki/Q546829",
+    "genres": [
+      "horror",
+      "monster",
+      "science fiction"
+    ]
+  },
+  {
+    "name": "Mutiny on the Bounty",
+    "description": "1935 film by Frank Lloyd",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Poster_-_Mutiny_on_the_Bounty_%281935%29.jpg/500px-Poster_-_Mutiny_on_the_Bounty_%281935%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 132,
+    "release_date": "1935-01-01",
+    "poster_attribution": "Employee(s) of Metro-Goldwyn-Mayer",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Poster_-_Mutiny_on_the_Bounty_(1935).jpg",
+    "wikidata_id": "Q329709",
+    "data_source_url": "https://www.wikidata.org/wiki/Q329709",
+    "genres": [
+      "adventure",
+      "historical",
+      "trial"
+    ]
+  },
+  {
+    "name": "Paths of Glory",
+    "description": "1957 film directed by Stanley Kubrick",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Paths_of_Glory_%281957_poster%29.jpg/500px-Paths_of_Glory_%281957_poster%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 88,
+    "release_date": "1957-01-01",
+    "poster_attribution": "\"Copyright 1957 United Artists Corporation.\"",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Paths_of_Glory_(1957_poster).jpg",
+    "wikidata_id": "Q747936",
+    "data_source_url": "https://www.wikidata.org/wiki/Q747936",
+    "genres": [
+      "anti-war",
+      "trial",
+      "war"
+    ]
+  },
+  {
+    "name": "The Broadway Melody",
+    "description": "1929 film by Harry Beaumont",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/BroadwayMelodyPoster1.jpg/500px-BroadwayMelodyPoster1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 110,
+    "release_date": "1929-01-01",
+    "poster_attribution": "Metro-Goldwyn-Mayer (MGM)/Loew's (corporate author)",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:BroadwayMelodyPoster1.jpg",
+    "wikidata_id": "Q463620",
+    "data_source_url": "https://www.wikidata.org/wiki/Q463620",
+    "genres": [
+      "musical",
+      "romance"
+    ]
+  },
+  {
+    "name": "An American in Paris",
+    "description": "1951 film directed by Vincente Minnelli",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/An_American_in_Paris_%281951_film_poster%29.jpg/500px-An_American_in_Paris_%281951_film_poster%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 108,
+    "release_date": "1951-01-01",
+    "poster_attribution": "\"Copyright 1951 Loew's Incorporated\"",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:An_American_in_Paris_(1951_film_poster).jpg",
+    "wikidata_id": "Q747570",
+    "data_source_url": "https://www.wikidata.org/wiki/Q747570",
+    "genres": [
+      "musical"
+    ]
+  },
+  {
+    "name": "City Lights",
+    "description": "1931 film directed by Charlie Chaplin",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/City_Lights_%281931_theatrical_poster_-_retouched%29.jpg/500px-City_Lights_%281931_theatrical_poster_-_retouched%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 87,
+    "release_date": "1931-01-30",
+    "poster_attribution": "Hap Hadley",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:City_Lights_(1931_theatrical_poster_-_retouched).jpg",
+    "wikidata_id": "Q238211",
+    "data_source_url": "https://www.wikidata.org/wiki/Q238211",
+    "genres": [
+      "comedy drama",
+      "romantic comedy",
+      "tragicomedy"
+    ]
+  },
+  {
+    "name": "Modern Times",
+    "description": "1936 film directed by Charlie Chaplin",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Modern_Times_poster.jpg/500px-Modern_Times_poster.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 99,
+    "release_date": "1936-02-05",
+    "poster_attribution": "Unknown authorUnknown author",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Modern_Times_poster.jpg",
+    "wikidata_id": "Q45602",
+    "data_source_url": "https://www.wikidata.org/wiki/Q45602",
+    "genres": [
+      "comedy drama",
+      "romantic comedy",
+      "silent"
+    ]
+  },
+  {
+    "name": "Jaws",
+    "description": "1975 film by Steven Spielberg",
+    "poster_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Jaws_movie_poster.png/500px-Jaws_movie_poster.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "runtime_minutes": 124,
+    "release_date": "1975-06-20",
+    "poster_attribution": "Roger Kastel",
+    "poster_license": "Public domain",
+    "poster_source_url": "https://commons.wikimedia.org/wiki/File:Jaws_movie_poster.png",
+    "wikidata_id": "Q189505",
+    "data_source_url": "https://www.wikidata.org/wiki/Q189505",
+    "genres": [
+      "adventure",
+      "horror",
+      "natural horror"
+    ]
+  }
+]
