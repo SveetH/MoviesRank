@@ -1,4 +1,4 @@
-import { ArrowLeft, CirclePlay, Eye, EyeOff, Film, LockKeyhole, Mail, UserRound } from 'lucide-react'
+import { ArrowLeft, Eye, EyeOff, LockKeyhole, Mail, UserRound } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../AuthContext'
@@ -9,7 +9,7 @@ export function AuthPage({ mode }: { mode: 'login' | 'register' }) {
   const navigate = useNavigate()
   const location = useLocation()
   const destination = (location.state as { from?: string } | null)?.from ?? '/'
-  const [username, setUsername] = useState('')
+  const [identifier, setIdentifier] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
@@ -23,8 +23,8 @@ export function AuthPage({ mode }: { mode: 'login' | 'register' }) {
     setError('')
     setBusy(true)
     try {
-      if (isRegister) await register(username.trim(), email.trim(), password)
-      else await signIn(username.trim(), password)
+      if (isRegister) await register(identifier.trim(), email.trim(), password)
+      else await signIn(identifier.trim(), password)
       navigate(destination, { replace: true })
     } catch (reason) {
       setError(reason instanceof Error ? reason.message : 'Please check your details and try again.')
@@ -37,13 +37,8 @@ export function AuthPage({ mode }: { mode: 'login' | 'register' }) {
     <main className="auth-page">
       <div className="auth-art">
         <div className="auth-orb" />
-        <Link className="brand auth-brand" to="/">
-          <span className="brand-mark"><CirclePlay size={20} strokeWidth={1.7} /></span>
-          <span>movies<span className="brand-accent">rank</span></span>
-        </Link>
         <div className="auth-art-copy">
-          <div className="eyebrow"><Film size={14} /> YOUR MOVIE PEOPLE</div>
-          <h1>Stories are<br />better <span>together.</span></h1>
+          <h1>Stories are<br />better <span>together</span></h1>
           <p>Find your next favorite. Share the films that moved you. Start a conversation that lasts past the credits.</p>
           <div className="auth-art-stamp"><span>MR</span><i>THE MOVIE CLUB<br />FOR EVERYONE</i></div>
         </div>
@@ -58,10 +53,10 @@ export function AuthPage({ mode }: { mode: 'login' | 'register' }) {
           <p className="auth-intro">{isRegister ? 'Create an account to rate, save, and talk movies.' : 'Sign in to pick up where you left off.'}</p>
 
           <form className="auth-form" onSubmit={(event) => void handleSubmit(event)}>
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">{isRegister ? 'Username' : 'Username or email address'}</label>
             <div className="input-with-icon">
               <UserRound size={17} />
-              <input id="username" value={username} onChange={(event) => setUsername(event.target.value)} autoComplete="username" required />
+              <input id="username" value={identifier} onChange={(event) => setIdentifier(event.target.value)} autoComplete="username" required />
             </div>
             {isRegister && (
               <>

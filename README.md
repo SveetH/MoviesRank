@@ -16,7 +16,9 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-The API is available at `http://127.0.0.1:8000/api/`; the Django admin is at `/admin/`.
+The API is available at `http://127.0.0.1:8000/api/`; the Django admin is at
+`http://127.0.0.1:8000/admin/`. The `createsuperuser` command above prompts you for a
+username, email address, and password. Sign in to the admin with that username and password.
 The development secret key is only a local fallback. Set `DJANGO_SECRET_KEY`, `DJANGO_DEBUG`,
 and `DJANGO_ALLOWED_HOSTS` in deployment environments.
 
@@ -36,6 +38,12 @@ Visit `http://127.0.0.1:5173/`. Vite proxies `/api` requests to `http://127.0.0.
 override the target with `API_PROXY_TARGET` if Django is listening elsewhere. Create a
 production bundle with `npm run build` in `frontend/`; serve the built `frontend/dist/` directory
 behind a web server that forwards `/api/` to Django.
+
+Movie records **can’t be edited or deleted from the frontend** right now; it has no
+movie-management controls. You can manage them through the Django admin at
+[http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/). To create an admin account, run
+`python manage.py createsuperuser` from the project root after applying migrations, then enter
+a username, email address, and password when prompted.
 
 Django 4.2 is pinned to support the Python 3.9 runtime available in this environment.
 That Django release is no longer supported for security fixes; before production deployment,
@@ -87,12 +95,12 @@ user actions require authentication.
 | DELETE | `/api/movies/{id}/rating/` | Authenticated | Remove your rating |
 | GET | `/api/movies/{id}/interaction/` | Authenticated | Read your like and rating for a movie |
 | GET/POST | `/api/movies/{id}/comments/` | Public read; authenticated write | List or add comments |
-| DELETE | `/api/comments/{id}/` | Author or Movie Manager | Delete a comment |
+| PATCH/PUT/DELETE | `/api/comments/{id}/` | Author or Movie Manager | Edit or delete a comment |
 | GET | `/api/movies/liked/` | Authenticated | List movies you have liked |
 
 Ratings and likes are unique per user/movie pair. Movie responses include `likes_count`,
 `average_rating` (null when unrated), and `rating_count`. Comments can be read publicly;
-only their author or a Movie Manager can delete them.
+only their author or a Movie Manager can edit or delete them.
 
 ### Search, filtering, and ordering
 

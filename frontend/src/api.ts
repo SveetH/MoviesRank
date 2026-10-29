@@ -192,6 +192,13 @@ export const api = {
     return request<void>(`/comments/${commentId}/`, { method: 'DELETE' })
   },
 
+  updateComment(commentId: number, text: string) {
+    return request<Comment>(`/comments/${commentId}/`, {
+      method: 'PATCH',
+      body: JSON.stringify({ text }),
+    })
+  },
+
   likeMovie(movieId: number) {
     return request<{ id: number }>(`/movies/${movieId}/like/`, { method: 'POST' })
   },

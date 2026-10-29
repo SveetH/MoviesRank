@@ -1,7 +1,7 @@
-import { ArrowLeft, CalendarDays, Clock3, Heart, MessageCircle, Send, Star, Trash2 } from 'lucide-react'
+import { ArrowLeft, CalendarDays, Check, Clock3, Heart, MessageCircle, Pencil, Send, Star, Trash2, X } from 'lucide-react'
 import { useCallback, useEffect, useState, type FormEvent } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { api, getCurrentUser } from '../api'
+import { api } from '../api'
 import { ErrorState, LoadingState } from '../components/States'
 import { useAuth } from '../AuthContext'
 import type { Comment, Movie, PaginatedResponse } from '../types'
@@ -27,6 +27,9 @@ export function MovieDetailPage() {
   const [hoverRating, setHoverRating] = useState(0)
   const [commentText, setCommentText] = useState('')
   const [submittingComment, setSubmittingComment] = useState(false)
+  const [editingCommentId, setEditingCommentId] = useState<number | null>(null)
+  const [editingCommentText, setEditingCommentText] = useState('')
+  const [savingComment, setSavingComment] = useState(false)
   const [feedback, setFeedback] = useState('')
 
   const loadMovie = useCallback(async () => {
@@ -87,6 +90,7 @@ export function MovieDetailPage() {
     setFeedback('')
     try {
       await api.rateMovie(movieId, rating)
+      setMovie(await api.getMovie(movieId))
       setFeedback(`Your ${rating}-star rating has been saved.`)
     } catch (reason) {
       setFeedback(reason instanceof Error ? reason.message : 'Could not save your rating.')
@@ -123,6 +127,40 @@ export function MovieDetailPage() {
     }
   }
 
+  async function saveComment(commentId: number) {
+    const text = editingCommentText.trim()
+    if (!text) return
+
+    setSavingComment(true)
+    setFeedback('')
+    try {
+      const updatedComment = await api.updateComment(commentId, text)
+      setCommentData((current) => current && ({
+        ...current,
+        results: current.results.map((comment) => (
+          comment.id === commentId ? updatedComment : comment
+        )),
+      }))
+      setEditingCommentId(null)
+      setEditingCommentText('')
+    } catch (reason) {
+      setFeedback(reason instanceof Error ? reason.message : 'Could not update the comment.')
+    } finally {
+      setSavingComment(false)
+    }
+  }
+
+  function startEditingComment(comment: Comment) {
+    setEditingCommentId(comment.id)
+    setEditingCommentText(comment.text)
+    setFeedback('')
+  }
+
+  function cancelEditingComment() {
+    setEditingCommentId(null)
+    setEditingCommentText('')
+  }
+
   function changeCommentPage(url: string | null) {
     if (!url) return
     const page = Number(new URL(url, window.location.origin).searchParams.get('page') ?? 1)
@@ -134,7 +172,6 @@ export function MovieDetailPage() {
     return <main className="page-wrap"><ErrorState message={error || 'Movie not found.'} onRetry={() => void loadMovie()} /></main>
   }
 
-  const currentUserId = getCurrentUser()?.id
   const background = movie.poster_url
     ? `linear-gradient(90deg, #101014 0%, rgba(16, 16, 20, .92) 42%, rgba(16, 16, 20, .65) 100%), url("${movie.poster_url}")`
     : 'linear-gradient(110deg, #23212a, #101014 72%)'
@@ -233,12 +270,60 @@ export function MovieDetailPage() {
                 <div className="comment-avatar comment-avatar-muted">{comment.username.slice(0, 1).toUpperCase()}</div>
                 <div className="comment-content">
                   <div className="comment-meta"><strong>{comment.username}</strong><time>{formatDate(comment.created_at)}</time></div>
-                  <p>{comment.text}</p>
+                  {editingCommentId === comment.id ? (
+                    <div className="comment-edit-form">
+                      <label className="sr-only" htmlFor={`edit-comment-${comment.id}`}>Edit your comment</label>
+                      <textarea
+                        id={`edit-comment-${comment.id}`}
+                        value={editingCommentText}
+                        onChange={(event) => setEditingCommentText(event.target.value)}
+                        maxLength={5000}
+                        autoFocus
+                      />
+                      <div className="comment-edit-actions">
+                        <button
+                          className="comment-action"
+                          type="button"
+                          onClick={() => void saveComment(comment.id)}
+                          disabled={!editingCommentText.trim() || savingComment}
+                        >
+                          <Check size={15} /> Save
+                        </button>
+                        <button
+                          className="comment-action"
+                          type="button"
+                          onClick={cancelEditingComment}
+                          disabled={savingComment}
+                        >
+                          <X size={15} /> Cancel
+                        </button>
+                      </div>
+                    </div>
+                  ) : (
+                    <p>{comment.text}</p>
+                  )}
                 </div>
-                {currentUserId === comment.user && (
-                  <button className="delete-comment" onClick={() => void deleteComment(comment.id)} aria-label="Delete your comment">
-                    <Trash2 size={16} />
-                  </button>
+                {comment.is_owner && (
+                  <div className="comment-actions">
+                    <button
+                      className="delete-comment"
+                      onClick={() => startEditingComment(comment)}
+                      aria-label="Edit your comment"
+                      title="Edit comment"
+                      hidden={editingCommentId === comment.id}
+                    >
+                      <Pencil size={15} />
+                    </button>
+                    <button
+                      className="delete-comment"
+                      onClick={() => void deleteComment(comment.id)}
+                      aria-label="Delete your comment"
+                      title="Delete comment"
+                      hidden={editingCommentId === comment.id}
+                    >
+                      <Trash2 size={16} />
+                    </button>
+                  </div>
                 )}
               </article>
             ))}

@@ -1,7 +1,7 @@
 from django.urls import path
 
 from .views import (
-    CommentDeleteView,
+    CommentUpdateDeleteView,
     LikedMoviesView,
     MovieCommentListCreateView,
     MovieDetailView,
@@ -23,5 +23,5 @@ urlpatterns = [
         name='movie-comments',
     ),
     path('movies/<int:pk>/', MovieDetailView.as_view(), name='movie-detail'),
-    path('comments/<int:pk>/', CommentDeleteView.as_view(), name='comment-delete'),
+    path('comments/<int:pk>/', CommentUpdateDeleteView.as_view(), name='comment-detail'),
 ]
