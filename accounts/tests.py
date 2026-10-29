@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 from rest_framework import status
 from rest_framework.test import APITestCase
+from rest_framework_simplejwt.tokens import AccessToken, RefreshToken
 
 from .forms import AccountCreationForm
 
@@ -70,6 +71,26 @@ class AccountApiTests(APITestCase):
             format='json',
         )
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_login_accepts_username_or_case_insensitive_email(self):
+        Account.objects.create_user(
+            username='email-viewer',
+            email='viewer@example.com',
+            password='test-password-123',
+        )
+
+        for identifier in ('email-viewer', 'VIEWER@EXAMPLE.COM'):
+            with self.subTest(identifier=identifier):
+                response = self.client.post(
+                    '/api/auth/login/',
+                    {'username': identifier, 'password': 'test-password-123'},
+                    format='json',
+                )
+                self.assertEqual(response.status_code, status.HTTP_200_OK)
+                self.assertIn('access', response.data)
+                self.assertIn('refresh', response.data)
+                self.assertEqual(AccessToken(response.data['access'])['username'], 'email-viewer')
+                self.assertEqual(RefreshToken(response.data['refresh'])['username'], 'email-viewer')
 
     def test_logout_cannot_blacklist_another_accounts_refresh_token(self):
         first_user = Account.objects.create_user(

@@ -38,7 +38,7 @@ export function LikedMoviesPage() {
         <div>
           <Link to="/" className="back-link back-link-dark"><ArrowLeft size={16} /> Discover</Link>
           <div className="eyebrow eyebrow-dark"><span className="eyebrow-line" /> YOUR PERSONAL COLLECTION</div>
-          <h1>Movies you <span>love.</span></h1>
+          <h1>Movies you <span>love</span></h1>
           <p>All the films you’ve saved in one place.</p>
         </div>
         <div className="liked-mark"><Heart size={31} /></div>

@@ -1,6 +1,6 @@
 from django.db.models import Avg, Count
 from django.shortcuts import get_object_or_404
-from rest_framework import generics, status
+from rest_framework import generics, mixins, status
 from rest_framework.permissions import AllowAny, IsAuthenticated, SAFE_METHODS
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -140,7 +140,20 @@ class MovieCommentListCreateView(generics.ListCreateAPIView):
         serializer.save(user=self.request.user, movie=movie)
 
 
-class CommentDeleteView(generics.DestroyAPIView):
+class CommentUpdateDeleteView(
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
+    generics.GenericAPIView,
+):
     queryset = Comment.objects.select_related('user')
     serializer_class = CommentSerializer
     permission_classes = (IsCommentOwnerOrMovieManager,)
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+
+    def patch(self, request, *args, **kwargs):
+        return self.partial_update(request, *args, **kwargs)
+
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)

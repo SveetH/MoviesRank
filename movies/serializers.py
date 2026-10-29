@@ -66,11 +66,16 @@ class MovieWriteSerializer(serializers.ModelSerializer):
 
 class CommentSerializer(serializers.ModelSerializer):
     username = serializers.CharField(source='user.username', read_only=True)
+    is_owner = serializers.SerializerMethodField()
 
     class Meta:
         model = Comment
-        fields = ('id', 'movie', 'user', 'username', 'text', 'created_at', 'updated_at')
+        fields = ('id', 'movie', 'user', 'username', 'is_owner', 'text', 'created_at', 'updated_at')
         read_only_fields = ('id', 'movie', 'user', 'username', 'created_at', 'updated_at')
+
+    def get_is_owner(self, comment):
+        request = self.context.get('request')
+        return bool(request and request.user.is_authenticated and request.user.pk == comment.user_id)
 
 
 class RatingSerializer(serializers.ModelSerializer):

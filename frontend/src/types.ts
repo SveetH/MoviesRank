@@ -29,6 +29,7 @@ export interface Comment {
   movie: number
   user: number
   username: string
+  is_owner: boolean
   text: string
   created_at: string
   updated_at: string

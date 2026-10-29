@@ -5,13 +5,18 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.exceptions import TokenError
 from rest_framework_simplejwt.settings import api_settings
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.views import TokenObtainPairView
 
-from .serializers import RegistrationSerializer
+from .serializers import RegistrationSerializer, UsernameOrEmailTokenObtainPairSerializer
 
 
 class RegistrationView(generics.CreateAPIView):
     serializer_class = RegistrationSerializer
     permission_classes = (AllowAny,)
+
+
+class LoginView(TokenObtainPairView):
+    serializer_class = UsernameOrEmailTokenObtainPairSerializer
 
 
 class LogoutSerializer(serializers.Serializer):

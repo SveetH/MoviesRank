@@ -134,9 +134,10 @@ class MovieApiTests(APITestCase):
             {'liked': True, 'rating': 4},
         )
 
-    def test_comments_are_public_to_read_and_only_author_or_manager_can_delete(self):
+    def test_comments_are_public_to_read_and_only_author_or_manager_can_edit_or_delete(self):
         comments_url = f'/api/movies/{self.movie.pk}/comments/'
-        self.assertEqual(self.client.get(comments_url).status_code, status.HTTP_200_OK)
+        public_response = self.client.get(comments_url)
+        self.assertEqual(public_response.status_code, status.HTTP_200_OK)
         self.assertEqual(
             self.client.post(comments_url, {'text': 'Anonymous'}, format='json').status_code,
             status.HTTP_401_UNAUTHORIZED,
@@ -149,19 +150,67 @@ class MovieApiTests(APITestCase):
             format='json',
         )
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+        self.assertTrue(response.data['is_owner'])
         comment = Comment.objects.get(pk=response.data['id'])
         self.assertEqual(comment.user, self.user)
+        self.client.force_authenticate(None)
+        anonymous_comments = self.client.get(comments_url)
+        self.assertFalse(anonymous_comments.data['results'][0]['is_owner'])
+        self.assertEqual(
+            self.client.patch(
+                f'/api/comments/{comment.pk}/',
+                {'text': 'Anonymous edit'},
+                format='json',
+            ).status_code,
+            status.HTTP_401_UNAUTHORIZED,
+        )
 
         self.client.force_authenticate(self.other_user)
+        other_user_comments = self.client.get(comments_url)
+        self.assertFalse(other_user_comments.data['results'][0]['is_owner'])
+        self.assertEqual(
+            self.client.patch(
+                f'/api/comments/{comment.pk}/',
+                {'text': 'Unauthorized edit'},
+                format='json',
+            ).status_code,
+            status.HTTP_403_FORBIDDEN,
+        )
         self.assertEqual(
             self.client.delete(f'/api/comments/{comment.pk}/').status_code,
             status.HTTP_403_FORBIDDEN,
         )
+
         self.client.force_authenticate(self.user)
+        edit_response = self.client.patch(
+            f'/api/comments/{comment.pk}/',
+            {'text': 'Updated thoughtful review'},
+            format='json',
+        )
+        self.assertEqual(edit_response.status_code, status.HTTP_200_OK)
+        self.assertEqual(edit_response.data['text'], 'Updated thoughtful review')
+        comment.refresh_from_db()
+        self.assertEqual(comment.text, 'Updated thoughtful review')
+
         self.assertEqual(
             self.client.delete(f'/api/comments/{comment.pk}/').status_code,
             status.HTTP_204_NO_CONTENT,
         )
+
+    def test_movie_manager_can_edit_another_users_comment(self):
+        comment = Comment.objects.create(
+            user=self.user,
+            movie=self.movie,
+            text='Original comment',
+        )
+        self.client.force_authenticate(self.manager)
+        response = self.client.patch(
+            f'/api/comments/{comment.pk}/',
+            {'text': 'Manager edit'},
+            format='json',
+        )
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data['text'], 'Manager edit')
 
     def test_search_filter_and_genres(self):
         genre = Genre.objects.create(name='Drama', slug='drama')
