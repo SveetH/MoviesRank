@@ -1,4 +1,4 @@
-import { ArrowLeft, Eye, EyeOff, LockKeyhole, Mail, UserRound } from 'lucide-react'
+import { ArrowLeft, Clapperboard, Eye, EyeOff, LockKeyhole, Mail, UserRound } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../AuthContext'
@@ -40,7 +40,7 @@ export function AuthPage({ mode }: { mode: 'login' | 'register' }) {
         <div className="auth-art-copy">
           <h1>Stories are<br />better <span>together</span></h1>
           <p>Find your next favorite. Share the films that moved you. Start a conversation that lasts past the credits.</p>
-          <div className="auth-art-stamp"><span>MR</span><i>THE MOVIE CLUB<br />FOR EVERYONE</i></div>
+          <div className="auth-art-stamp"><Clapperboard size={32} strokeWidth={1.5} /><i>THE MOVIE CLUB<br />FOR EVERYONE</i></div>
         </div>
         <div className="auth-footer-note">ANOTHER GOOD STORY STARTS HERE</div>
       </div>

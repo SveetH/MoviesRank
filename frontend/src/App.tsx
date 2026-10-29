@@ -1,4 +1,4 @@
-import { ArrowUpRight, CirclePlay, Clapperboard } from 'lucide-react'
+import { ArrowUpRight, Clapperboard, Video } from 'lucide-react'
 import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { useAuth } from './AuthContext'
 import { Header } from './components/Header'
@@ -39,7 +39,7 @@ export function App() {
       </Routes>
       <footer className="site-footer">
         <Link className="brand footer-brand" to="/">
-          <span className="brand-mark"><CirclePlay size={18} strokeWidth={1.7} /></span>
+          <span className="brand-mark"><Video size={18} strokeWidth={1.7} /></span>
           <span>movies<span className="brand-accent">rank</span></span>
         </Link>
         <span>For the love of a good story.</span>
