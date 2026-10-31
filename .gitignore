@@ -6,4 +6,3 @@ db.sqlite3
 venv/
 staticfiles/
 .github/
-.agents/
