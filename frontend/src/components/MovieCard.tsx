@@ -47,7 +47,7 @@ export function MovieCard({ movie }: { movie: Movie }) {
         </div>
         <Link className="movie-card-title" to={`/movies/${movie.id}`}>{movie.name}</Link>
         <div className="movie-card-footer">
-          <span className="genre-label">{movie.genres[0]?.name ?? 'Movie'}</span>
+          <span className="genre-label">{movie.genres.map((genre) => genre.name).join(', ') || 'Movie'}</span>
           <span className="like-count"><Heart size={14} /> {movie.likes_count}</span>
         </div>
       </div>
