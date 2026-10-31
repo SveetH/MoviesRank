@@ -22,6 +22,14 @@ username, email address, and password. Sign in to the admin with that username a
 The development secret key is only a local fallback. Set `DJANGO_SECRET_KEY`, `DJANGO_DEBUG`,
 and `DJANGO_ALLOWED_HOSTS` in deployment environments.
 
+## AI-assisted API development
+
+The workspace includes the `django-rest-api-development` skill at
+`.agents/skills/django-rest-api-development/SKILL.md`. Use it as a supplementary reference when
+implementing or reviewing Django REST API changes. It was also used to review and document this
+API's class-based views, serializer validation, permission boundaries, and related-queryset
+handling; tests and code review remain essential.
+
 ## React frontend
 
 The React/TypeScript frontend lives in `frontend/` and uses Vite for development and production
